@@ -3,5 +3,60 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+:root {
+    --background-color: white;
+    --text-color: black;
+    --primary-color: #10b981;
+    /* Tailwind green-500 */
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: white;
+    --primary-color: #4ade80;
+    /* Tailwind green-400 */
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Default Button Toggle Styles */
+.mat-button-toggle-group {
+    background-color: var(--background-color) !important;
+}
+
+.mat-button-toggle {
+    color: var(--text-color) !important;
+}
+
+/* Custom Styles for Different Instances */
+.blue-theme .mat-button-toggle-checked {
+    background-color: #2196f3 !important;
+    /* Blue */
+    color: white !important;
+}
+
+.red-theme .mat-button-toggle-checked {
+    background-color: #f44336 !important;
+    /* Red */
+    color: white !important;
+}
+
+.green-theme .mat-button-toggle-checked {
+    background-color: #4caf50 !important;
+    /* Green */
+    color: white !important;
+}
