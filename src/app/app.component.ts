@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import {  Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +15,15 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class AppComponent implements OnInit {
   title = 'advanced-expense-manager';
-
-  private isDark = false;
+  
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('key', 'value');
+      console.log(localStorage.getItem('key'));
+    }
+  }
+    
+    private isDark = false;
   ngOnInit() {
     this.applySavedTheme();
   }
