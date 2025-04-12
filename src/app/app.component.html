@@ -1,4 +1,4 @@
-<!-- <div class="w-96 bg-blue shadow rounded">
+<div class="w-96 bg-blue shadow rounded">
   w-96
 </div>
 <div class="w-80 bg-green shadow rounded">
@@ -7,7 +7,7 @@
 
 <div class="bg-[var(--background-color)] text-[var(--text-color)] p-4 rounded-md">
   Themed Card
-</div> -->
+</div>
 
 <!-- <button class="bg-[var(--primary-color)] text-white px-4 py-2 rounded-md"> -->
 <button mat-fab extended>Click Me !</button>
@@ -20,3 +20,29 @@
     <mat-button-toggle value="green-light"> <mat-icon>light_mode</mat-icon> Light</mat-button-toggle> 
   </mat-button-toggle-group>
 </p>
+
+<!-- Responsive layout -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+
+  <app-custom-card
+    [bgColor]="'bg-gradient-to-br from-sky-100 to-sky-300'"
+    [textColor]="'text-sky-900'"
+    [fontSize]="'text-lg'"
+    [fontWeight]="'font-normal'"
+    [fontFamily]="'font-mono'"
+    [padding]="'p-6'"
+    [borderRadius]="'rounded-2xl'"
+    [shadow]="'shadow-xl'"
+    [width]="'w-full'"
+    [height]="'h-64'"
+    [border]="'border-1'"
+    [borderColor]="'border-sky-500'"
+    [hoverEffect]="'hover:shadow-2xl hover:scale-105 transition-transform duration-500 hover:bg-blue-100'"
+    [showButton]="true"
+    [buttonText]="'Explore More'"
+    [buttonClass]="'bg-sky-600 text-white px-6 py-2 rounded-full mt-4 hover:bg-sky-700'"
+    [title]="'Golden Card'"
+    [content]="'This is a fully customizable card. Everything is adjustable.'"
+  ></app-custom-card>
+
+</div>

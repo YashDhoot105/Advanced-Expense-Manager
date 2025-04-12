@@ -5,11 +5,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import {  Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { CustomCardComponent } from './shared/custom-card/custom-card.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MatButtonToggleModule, MatIconModule, MatButtonModule],
+  imports: [MatButtonToggleModule, MatIconModule, MatButtonModule,CustomCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

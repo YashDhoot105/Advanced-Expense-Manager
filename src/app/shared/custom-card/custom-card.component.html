@@ -1,0 +1,32 @@
+<div
+  [ngClass]="[
+    bgColor,
+    textColor,
+    fontSize,
+    fontWeight,
+    fontFamily,
+    padding,
+    borderRadius,
+    shadow,
+    width,
+    height,
+    border,
+    borderColor,
+    hoverEffect,
+    customClass
+  ].join(' ')"
+>
+  <ng-container *ngIf="title">
+    <h2 class="mb-2">{{ title }}</h2>
+  </ng-container>
+
+  <ng-container *ngIf="content">
+    <p>{{ content }}</p>
+  </ng-container>
+
+  <ng-content *ngIf="!title && !content"></ng-content>
+
+  <button *ngIf="showButton" [ngClass]="buttonClass">
+    {{ buttonText }}
+  </button>
+</div>
